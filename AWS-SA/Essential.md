@@ -7,4 +7,8 @@
   - Disater recovery
     - RPO: Là thời gian recovery từ backup gần nhất. Data giữa thời gian hiện tại và thời gian backup sẽ bị mất
     - RTO: Là thời gian recovery từ lúc xảy ra disater -> lúc hệ thống hồi phục
-  
+  - Data persistence:
+    - Ephemeral: là data localy với resource, và bị mất khi resource bị tắt: ElasticCache, 
+    - Transient: SQS
+    - Persistence: EFS, EBS
+    
