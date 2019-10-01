@@ -3,7 +3,10 @@
  - DENY always overwrite ALLOW
  - Có thể chèn thêm variable: `"Condition": {"StringLike": {"s3:prefix": ["${aws:username}/*"]}}`
  - Có thể add other conditions
- - 
+## Identity Federation:
+ - Thông qua Identity Federation: không cần phải viết code authen, có thể sử dụng sẵn các identity provider (fb, gg,...), authen thông qua đó
+ - Khi muốn cấp quyền cho 1 user của identity provider access resource aws -> dùng STS với api: `assumeRoleWithWebIdentity`
+ - Dùng AssumeRoleWithWebIdentity: k access đc vào console, còn nếu dùng AssumeRoleWithSAML thì có thể truy cập đc vào console
 
 ## ROLE:
  - Has 2 components: `trust` policy + `permission` policy
