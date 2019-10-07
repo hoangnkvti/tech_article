@@ -12,3 +12,10 @@
     - Transient: SQS
     - Persistence: EFS, EBS
     
+    
+## AWS RAM:
+ - AWS RAM: có thể share resource đến các account khác hoặc trong organization
+ - Thực ra AZ name ở các account có thể khác nhau, refer đến AZ ID không giống nhau
+ - K thể thay đổi những config, element ở VPC level (route table, ...) nhưng có thể refer đến shared VPC (tạo instance,..)
+ - K thể share subnet ở default VPC, chỉ có thể share đc ở custom VPC
+ - Nếu subnet đang có resource ở 1 paticipant nào khác -> k thể delete
