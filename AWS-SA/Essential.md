@@ -12,10 +12,19 @@
     - Transient: SQS
     - Persistence: EFS, EBS
     
-    
-## AWS RAM:
- - AWS RAM: có thể share resource đến các account khác hoặc trong organization
- - Thực ra AZ name ở các account có thể khác nhau, refer đến AZ ID không giống nhau
- - K thể thay đổi những config, element ở VPC level (route table, ...) nhưng có thể refer đến shared VPC (tạo instance,..)
- - K thể share subnet ở default VPC, chỉ có thể share đc ở custom VPC
- - Nếu subnet đang có resource ở 1 paticipant nào khác -> k thể delete
+## VPC
+ - AWS Public Zone: S3, DynamoDB, CWLogs,...
+ - Mỗi subnet thì có 5 reserved IP: .0, .1, .2, .3, .255, và giữa những subnet thì sẽ k có chuyện overlap IP CIDR
+
+# Route table:
+ - Mỗi subnet dùng 1 IP cho router (.1)
+ - IP nào cụ thể hơn thì sẽ đc ưu tiên (/32 > /16)
+ - Có thể tạo custom RT -> attach vào subnet: 1 subnet chỉ đc associate với 1 RT, 1 RT có thể associate với nhiều subnet
+ - VPC luôn có 1 default RT
+ 
+ # NACLs:
+  - Stateless: config inbound và outboud (send request -> inbound, response -> outbound)
+  - Subnet level
+  - Thứ tự priority: giá trị # của rule
+  - Có thể DENY explicit traffic (SG k làm đc)
+  
