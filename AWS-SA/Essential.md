@@ -28,3 +28,18 @@
   - Thứ tự priority: giá trị # của rule
   - Có thể DENY explicit traffic (SG k làm đc)
   
+# Security Group:
+  - Stateful, attach to Network interface of resource
+  - K có DENY rule có thể deny explicit address
+  - Tất cả rule sẽ được apply same time, k có priority giữa các rule
+  - Source thì ngoài IP range có thể là aws resource
+  - Các resource share 1 SG (cùng nằm trong 1 SG) thì default có thể connect đến nhau, tránh overhead cost
+  
+# Subnet:
+  - Private subnet là những subnet k connect đc tới internet hoặc aws public zone (ngược với public subnet)
+  - Bastion host khi dùng ipconfig để check thì k có mention đến public IP mà đc attach -> bastion host internally k có public IP. Khi connect internet thì internet gateway sẽ mapping private IP và public IP
+
+# NAT Gateway:
+  - Dùng khi private subnet connect đến Internet nhưng k muốn internet connect vào
+  - NAT Gateway translate private IP -> public IP access internet nhưng k có chiều ngược lại
+  
