@@ -43,3 +43,7 @@
   - Dùng khi private subnet connect đến Internet nhưng k muốn internet connect vào
   - NAT Gateway translate private IP -> public IP access internet nhưng k có chiều ngược lại
   
+# Egress-Only Gateways
+  - Attach vào VPC -> giúp resource trong vpc connect to internet bằng IPv6 (k có chiều ngược lại)
+  - Dùng khi NAT Gateway k support IPv6
+  - Với aws thì mọi ipv6 đều publicly routable
