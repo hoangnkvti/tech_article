@@ -13,3 +13,10 @@
      + Add thêm custom runtime support và add dependencies, library cho lambda -> save vào /opt
      + Tối đa 5 layer, max 250Mb
      + Có thể share được với account khác hoặc public
+
+## API Gateway:
+ - Support REST API và web-socket-based API
+ - Có thể add WAF để protect
+ - Liên kết với nhiều service: lambda(serverless), mock-test, dynamoDB,...
+ - Logs: có thể intergration với Cloudwatch, Xray
+ - Khi update code -> chia ra làm các stage
