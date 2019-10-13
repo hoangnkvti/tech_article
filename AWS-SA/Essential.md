@@ -58,4 +58,28 @@
 # VPC flow log:
   - Retrieve traffic `meta-data`: version, account-id, ip,..., NOT for `actual data`
   - Những action k đc log: DHCP, DNS, get meta-data (trong EC2), license activation request
+
+# RAM:
+  - Sharing VPC resource between account, orgranization
+  - Create resource share -> can share subnet -> account được share toàn bộ các vpc resource cùng với subnet: vpc, NACL, route table,.. Tuy nhiên k thể edit những resource này (có thể refer)
+  - Phân biệt AZ và AZ ID
+  - K support 1 vài service: Glue, Aurora serverless, EMR, cloud HSM, ELB
+  - Có thể unshared subnet dù participant đang dùng, nhưng k thể delete 
+  -> resource đang dùng subnet đó của participant vẫn dùng subnet đó bthg, nhưng k thể tạo thêm resource mới liên quan đến subnet đó
+
+# VPC Endpoint:
+  - Use case: Connect to aws public zone và k connect ra internet
+  - Có 2 loại:
+    - Gateway Endpoint: 
+     - Ảo gắn vào vpc, có thể ở nhiều AZ, cho phép access các service public zone (s3, dynamodb). Dùng policy để giới hạn permission
+     - High avalability trong 1 region, k thuộc 1 AZ cố định
+     - Có thể tạo private S3, chỉ dùng riêng cho VPC
+     - K thể extend outside vpc
+    - Interface endpoint: 
+     - Physical (network level device), gắn vào subnet, mỗi AZ có 1 cái, dùng SG để giới hạn permission
+     - Mỗi AZ sẽ có 1 unique DNS name riêng để connect đến service public zone (SQS) bằng private IP, tuy nhiên có thể setting để connect đến SQS public DNS cũng bằng private IP
+     - Có thể extend outside vpc: VPN, Direct connect, VPC peering
+     - For each interface endpoint, you can choose only one subnet per Availability Zone.
+      
+# VPC Peering:
   - 
