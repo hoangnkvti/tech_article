@@ -47,3 +47,15 @@
   - Attach vào VPC -> giúp resource trong vpc connect to internet bằng IPv6 (k có chiều ngược lại)
   - Dùng khi NAT Gateway k support IPv6
   - Với aws thì mọi ipv6 đều publicly routable
+
+# DNS in VPC:
+  - Có thể truy cập = DNS đến các resource trong VPC
+  - Khi dùng 1 ec2 connect đến resource trong cùng VPC = public DNS -> IP đc sử dụng sẽ là internal private IP. Có thể dùng Route53 tạo private hosted zone, map DNS với IP address
+  - Tuy nhiên, on-premise network sẽ không thể dùng private IP hoặc private dns dù thông qua VPN
+  - Vì vậy, Khi muốn access vpc resource = private IP address thì có thể dùng Route 53 VPC resolver:
+      - inbound: connect từ on-premise vào vpc
+      - outbound (with forward rule) enpoint: connect từ vpc ra on-premise
+# VPC flow log:
+  - Retrieve traffic `meta-data`: version, account-id, ip,..., NOT for `actual data`
+  - Những action k đc log: DHCP, DNS, get meta-data (trong EC2), license activation request
+  - 
