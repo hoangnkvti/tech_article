@@ -93,9 +93,11 @@
 # Site-to-side VPN
   - VPN: connect đến internet across public internet
   - Customer Gateway: is the anchor on your side of that connection. It can be a physical or software appliance
-  - Vitual private gateway: the anchor on the AWS side of the VPN connection
+  - Vitual private gateway: the anchor on the AWS side of the VPN connection. Đc AWS quản lý nên có sẵn tính HA
   - If your VPN device supports Border Gateway Protocol (BGP), specify dynamic routing when you configure your Site-to-Site VPN connection. If your device does not support BGP, specify static routing
   - Recommend: vpc có dùng BGP, vì sẽ support detection failover
-  - Full HA VPN: dùng >=2 tunel, mỗi tunel ở 1 AZ + dynamic route. Ví dụ: 2 customer 
-  - 
-  - 
+  - Full HA VPN: dùng >=2 tunel, mỗi tunel ở 1 AZ + dynamic route. Ví dụ: 2 customer gateway (2 ip) -> dùng 4 tunel (2 AZ khác nhau) và 1 vitual private gateway
+  - Quick to setup, cheaper -> phù hợp với low requirement
+  - Route table: luôn ưu tiên local, tiếp theo là sẽ đến logest prefix match route, static route (internet gateway) -> direct connect -> cuối cùng là vpn với propagted route
+  
+
