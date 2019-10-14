@@ -85,5 +85,17 @@
   - Connect với VPC khác (region khác, account khác)
   - 2 vpc peering thì k đc overlap CIDR
   - Khi connect -> gửi request -> bên kia sẽ accept request (cùng account cũng sẽ có bước này)
-  - Sau khi peering: khi setting rule của SG VPC này thì có thể refer SG của VPC kia
+  - Sau khi peering: khi setting rule của SG VPC này thì có thể refer SG của VPC kia (trong cùng region)
+  - K có tính chất bắc cầu: VPC A<->B, B<->C thì A không thể access trực tiếp đến C
+  - Có thể resolve public ip của resource -> private IP nếu dùng resolver
+  - K thể extend với Direct connect, VPN: nếu connect với on-premise thì cũng k có tính chất bắc cầu
+
+# Site-to-side VPN
+  - VPN: connect đến internet across public internet
+  - Customer Gateway: is the anchor on your side of that connection. It can be a physical or software appliance
+  - Vitual private gateway: the anchor on the AWS side of the VPN connection
+  - If your VPN device supports Border Gateway Protocol (BGP), specify dynamic routing when you configure your Site-to-Site VPN connection. If your device does not support BGP, specify static routing
+  - Recommend: vpc có dùng BGP, vì sẽ support detection failover
+  - Full HA VPN: dùng >=2 tunel, mỗi tunel ở 1 AZ + dynamic route. Ví dụ: 2 customer 
+  - 
   - 
