@@ -82,4 +82,8 @@
      - For each interface endpoint, you can choose only one subnet per Availability Zone.
       
 # VPC Peering:
+  - Connect với VPC khác (region khác, account khác)
+  - 2 vpc peering thì k đc overlap CIDR
+  - Khi connect -> gửi request -> bên kia sẽ accept request (cùng account cũng sẽ có bước này)
+  - Sau khi peering: khi setting rule của SG VPC này thì có thể refer SG của VPC kia
   - 
