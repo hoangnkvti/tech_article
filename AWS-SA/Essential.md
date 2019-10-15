@@ -100,4 +100,13 @@
   - Quick to setup, cheaper -> phù hợp với low requirement
   - Route table: luôn ưu tiên local, tiếp theo là sẽ đến logest prefix match route, static route (internet gateway) -> direct connect -> cuối cùng là vpn với propagted route
   
-
+# Direct Connect:
+  - Physical connection, provide dedicated network -> tăng performance, low latency, vì connection k phải qua internet, qua nhiều router như vpn
+  - Reduce network cost: hữu ích khi transfer data lớn (terabyte). Nhưng mất thời gian để setup (vài tuần đến 1 tháng)
+  - DX location: Connect on-premise -> DX location (tùy region) -> AWS
+  - VIF (vitural interface): 
+     - nếu dùng public VIF -> chỉ connect đc đến public zone same region, k connect đến internet
+     - Nếu dùng private VIF -> Associate with single VPW <-> associate with single vpc (only same region)
+  - Data k đc encrypted thông qua direct connect
+  - Direct connect gateway: global resource, assocate với VPW ở nhiều region, reduce admin overhead
+  - K có tính chất bắc cầu
