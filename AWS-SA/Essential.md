@@ -70,16 +70,16 @@
 # VPC Endpoint:
   - Use case: Connect to aws public zone và k connect ra internet
   - Có 2 loại:
-    - Gateway Endpoint: 
-     - Ảo gắn vào vpc, có thể ở nhiều AZ, cho phép access các service public zone (s3, dynamodb). Dùng policy để giới hạn permission
-     - High avalability trong 1 region, k thuộc 1 AZ cố định
-     - Có thể tạo private S3, chỉ dùng riêng cho VPC
-     - K thể extend outside vpc
-    - Interface endpoint: 
-     - Physical (network level device), gắn vào subnet, mỗi AZ có 1 cái, dùng SG để giới hạn permission
-     - Mỗi AZ sẽ có 1 unique DNS name riêng để connect đến service public zone (SQS) bằng private IP, tuy nhiên có thể setting để connect đến SQS public DNS cũng bằng private IP
-     - Có thể extend outside vpc: VPN, Direct connect, VPC peering
-     - For each interface endpoint, you can choose only one subnet per Availability Zone.
+     - Gateway Endpoint: 
+       - Ảo gắn vào vpc, có thể ở nhiều AZ, cho phép access các service public zone (s3, dynamodb). Dùng policy để giới hạn permission
+       - High avalability trong 1 region, k thuộc 1 AZ cố định
+       - Có thể tạo private S3, chỉ dùng riêng cho VPC
+       - K thể extend outside vpc
+     - Interface endpoint: 
+       - Physical (network level device), gắn vào subnet, mỗi AZ có 1 cái, dùng SG để giới hạn permission
+       - Mỗi AZ sẽ có 1 unique DNS name riêng để connect đến service public zone (SQS) bằng private IP, tuy nhiên có thể setting để connect đến SQS public DNS cũng bằng private IP
+       - Có thể extend outside vpc: VPN, Direct connect, VPC peering
+       - For each interface endpoint, you can choose only one subnet per Availability Zone.
       
 # VPC Peering:
   - Connect với VPC khác (region khác, account khác)
@@ -110,3 +110,11 @@
   - Data k đc encrypted thông qua direct connect
   - Direct connect gateway: global resource, assocate với VPW ở nhiều region, reduce admin overhead
   - K có tính chất bắc cầu
+  
+# Transit Gateway
+  - Có thể làm trung gian, connect đến các VPC, support transitive routing
+  - Có thể share với các AWS account with RAM
+  - Là region level resource -> không thể connect đến VPC khác region
+  - Support VPC connection and VPN connection
+  - K thể reference SG của VPC khác qua Transit Gateway
+  
