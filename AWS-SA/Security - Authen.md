@@ -1,4 +1,4 @@
-# IAM:
+## IAM:
  - Real identity: Role, User (has ARN)
  - DENY always overwrite ALLOW
  - Evaluate: Explicit DENY -> Explicit ALLOW -> implicit DENY
@@ -21,8 +21,43 @@
  - User ở organization dùng role để put object lên s3 -> s3 đó có owner là identity của role
  
  
- # ORGANIZATION:
+ ## ORGANIZATION:
   - Có thể switch sang các role con
   - SCP: khác với policy bthg, quy định cái gì làm được và cái gì k làm đc -> overlay với IAM policy (intersect)
   - DENY luôn win ALLOW
   - Master account k bị ảnh hưởng bởi SCP
+
+## KMS:
+  - CMK: 
+    - Key có thể dùng encrypt hoặc decrypt data (max 4Kb) đc generated bởi KMS hoặc import
+    - Represent of one or more backing key 
+    - Never leave KMS and region 
+    - Có thể tạo alias đến CMK -> same alias with different region
+    - Default: only give key permission for root account
+  - Flow: Request KMS provide Data encryption key from CMK -> return 2 thing, plain text (data encryption key - DEK) và cyphertextblob (encrypted version of DEK)
+   -> Encrypt data = DEK, giữ file key cùng nơi với data để biết đc mình dùng key nào, xóa DEK
+   -> Khi decrypt, gửi cyphertextblob lên KMS -> trả về DEK -> decrypt
+  - KMS k maintain, manage Data encryption key
+  - Envolop Encryption: process, encrypt data by DEK, then encrypt DEK by another CMK -> data key, discard original plaintext version
+  - Khi rotation -> add thêm 1 backing key, inactive backing key cũ. Những backing key cũ k thể encryption nhưng có thể decrypt
+  - Đạt chuẩn FIPS 140-2
+  
+# CloudHSM
+  - Là hardware security module -> có thể generate key, perform cryptographic operation. Aws chỉ mannage, chứ k access được vào key material bên trong
+  - Interaction via industry standard APIs, no normal APIs: PKCS#11, JCE, CNG (KMS k support những loại này)
+  - Inject vào VPC qua ENI -> resource connect đến cloudHSM qua ENI
+  - Đạt chuẩn FIPS 140-3
+  - Có thể access từ outside vpc (qua vpn, direct connect, vpc endpoint,..)
+  - Nếu muốn control physical hardware -> có thể dùng on-premise HSM
+# ACM: AWS Certificate Manager
+  - Provide X509 v3 SSL/TLS certificate
+  - Native integrate with ELB, Cloudfront, Elastic Beanstalk, API Gateway
+  - Add SSL certificate -> phải verify ownership of domain
+  - Private key thì sẽ đc store ở KMS -> các integration service sẽ tương tác với KMS để lấy private key (k bh ở trạng thái plaintext) -> ACM k dùng được với service mà k integrate (ec2,..)
+ 
+ #  AWS Directory Service
+   - Là 1 service group các product: Amazon Cloud Directory, Simple AD, Microsoft Active Directory, AD Connector và Cognito
+
+  
+  
+  
