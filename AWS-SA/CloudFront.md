@@ -16,6 +16,7 @@
  - Add nhiều Custom Origin với nhiều source khác nhau (s3, onpremise, elb,...) -> dùng behavior setting để điều hướng với từng loại resource
  - Khi dùng custom origin -> có public IP address
  - Cloudfront có thể ở trạng thái private
+ - Có thể logging vào S3, view đc nhiều analytic
  
  ## Security:
   - Có 2 layer: WAF (phải setting manually) -> Cloudfront
@@ -32,4 +33,10 @@
   - Có thể view statistics về cache hit and miss
   - Query String forward: Default: None -> nếu với query string khác nhau resource khác thì nên enable
   - Có thể custom performance based on cookie, header
+  
+## Lambda@Edge
+  - Per behavior level
+  - Trigger khi response, request từ viewer <-> edge location <-> origin 
+  - Chỉ có thể trigger đến functions ở US East N. Virginia
+  - Scenario: inspect cookie from viewer -> provide suitable action...
   - 
