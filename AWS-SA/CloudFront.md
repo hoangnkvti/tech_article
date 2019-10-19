@@ -39,3 +39,7 @@
   - Trigger khi response, request từ viewer <-> edge location <-> origin 
   - Chỉ có thể trigger đến functions ở US East N. Virginia
   - Scenario: inspect cookie from viewer -> provide suitable action...
+  
+  # Route 53
+  
+   - 
