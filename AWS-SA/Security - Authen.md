@@ -64,5 +64,22 @@
    - Simple AD, Microsoft Active Directory, AD Connector: HA, deploy ở nhiều AZ, có IP address (Giống rds). Có thể dùng để provide access to aws service, console.
   <img width="804" alt="Screen Shot 2019-10-20 at 1 35 08" src="https://user-images.githubusercontent.com/40649408/67148384-08721f80-f2da-11e9-88b3-61da9e6d4805.png">
 
-  
-  
+ #  AWS WAF
+   - Control traffic reach to ELB, Cloudfront, API Gateway -> traffic is filtered by WAF before connect to these services
+   - Unit of WAF: web ACL: Condition, rule contains conditions, web acl contains rules
+   - Có 2 loại rule: regular rule, rate-based rule: base on frequency (VD: request 2000 lần trong 1 phút...)
+   - Có nhiều loại condition: dựa vào địa lý, cross-site scripting, IP address,....
+
+#  AWS Shield
+  - Protect DDos, đứng trước WAF
+  - Có 2 version: 
+     - Standard: protect common DDos attack, always on
+     - Advanced: extra cost (3k$/month) -> có nhiều feature hơn, có analytics, report và team support, cost protection (refund lại cost phát sinh bởi DDos), k mất cost cho AWS WAF, protection with Elastic IP
+
+# AWS GuardDuty
+  - Can access data source from cross account (VPC Flow logs, Cloudtrail, R53 DNS Query, Threat intelligency: finding ra các potential security issue)
+  - Account có thể enable GuardDuty -> invite những account khác, và trở thành Master Guard
+  - 1 Account chỉ là member của 1 GuardDuty
+  - Trusted IP: IP mà k generate finding
+  - Finding: k real time
+  - Dựa vào data -> dùng ML để tìm ra sự bất thường -> tạo ra cloudwatch event
