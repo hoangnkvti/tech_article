@@ -57,7 +57,12 @@
  
  #  AWS Directory Service
    - Là 1 service group các product: Amazon Cloud Directory, Simple AD, Microsoft Active Directory, AD Connector và Cognito
+   - 2 group: Amazon Cloud Directory + Cognito và còn lại
+   - Simple AD: open source, is not a true MAD, but it is subset of MAD,
+   - Cognito: web application, federation (GG, Fb, ...), mobile -> k dùng với kiểu directory truyền thống
+   - Amazon Cloud Directory: graph-based, phù hợp với store information on relationship (ví dụ như Graph DB), k phù hợp với workload, user/group
+   - Simple AD, Microsoft Active Directory, AD Connector: HA, deploy ở nhiều AZ, có IP address (Giống rds). Có thể dùng để provide access to aws service, console.
+  <img width="804" alt="Screen Shot 2019-10-20 at 1 35 08" src="https://user-images.githubusercontent.com/40649408/67148384-08721f80-f2da-11e9-88b3-61da9e6d4805.png">
 
-  
   
   
