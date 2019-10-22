@@ -20,3 +20,9 @@
  - Liên kết với nhiều service: lambda(serverless), mock-test, dynamoDB,...
  - Logs: có thể intergration với Cloudwatch, Xray
  - Khi update code -> chia ra làm các stage
+
+
+## EC2
+ - Elastic Interface: apply for deep learning
+ - AMI:
+   - 
