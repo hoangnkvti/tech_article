@@ -28,4 +28,15 @@
    - Khi tạo AMI: tạo snapshot của EBS -> AMI sẽ refer đến snapshot đó
    - Regional base -> có thể copy sang region khác (khi đó các snapshot đang đc refer cũng sẽ đc copy)
    - Default: chỉ có account owner có permission -> có thể setting public để share cho mọi ng, hoặc share cho 1 số account
-   -
+ - VM: latest: Nitro, near bare metal
+ - Các type:
+   - Chia theo các dòng
+   - General Purpose: dòng T: burstable, tích credit khi CPU usage < baseline, dúng khi CPU usage > baseline
+ - Instance store: non persistant -> use for cache, temporary storage, need high IOPS throughput
+    -> not use: share storage, durability, elasticity
+ - EBS: Network storage product
+   - EBS optimized: provide đeicated storage network -> improve speed, reduce contention with traditional data transfer
+   - IOPS size: 256Kb chunk -> if operation is 256Kb -> count as 2 IOPS
+   - Type:
+     - General purpose: Good IOPS (100-16000 IOPS/vol)
+     - Provisioned IOPS SSD: Need low latency, need higher IOPS throughput 
