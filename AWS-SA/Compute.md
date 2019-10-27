@@ -49,3 +49,8 @@
    - Cluster: Single AZ, k thể span across AZ -> highest speed, lowest latency. Can span peered VPCs in the same Region
    - Partition: Chia ra làm nhiều partition nhỏ hơn, multiAZ -> tăng resilience
    - Spread: Các instance sẽ được bố trí ở những racks khác nhau (1 AZ có tối đa 7 instance), có thể single-AZ hoặc multi-AZ -> phù hợp với dự án nhỏ, ít critical instance, có thể mix đc cái type khác nhau
+   
+## Container:
+  - Containerization <> virtualization: ![image](https://user-images.githubusercontent.com/40649408/67635916-e185a000-f90e-11e9-9e0c-6aa4a9c1b3a2.png)
+  - Benefit: 
+    - Các container 
