@@ -53,4 +53,18 @@
 ## Container:
   - Containerization <> virtualization: ![image](https://user-images.githubusercontent.com/40649408/67635916-e185a000-f90e-11e9-9e0c-6aa4a9c1b3a2.png)
   - Benefit: 
-    - Các container 
+    - Các container chung OS -> chỉ cần quản lý memory
+    - Faster to startup (có thể chưa đến 1s)
+  - ECS:
+    - Cluster: a collection of compute resource to host your container
+    - Task definition: a configuration,... how container is created, how this container interact...
+    - Container definition: define docker image, CPU, memory,... Task contains many containers
+    - Service: allow ECS admin can maintain a specific number of task
+  - Run ecs in 2 mode: 
+    - EC2: tự manage
+    - Fargate: k phải quản lý host, ec2
+  - Type of networking: giá trị network mode của task
+    - none: k thể interact với các resource khác, k thể port mapping
+    - bridge: sử dụng internal network trong cùng 1 host
+    - host: maps container ports directly to the EC2 instance's network interface directly -> you can't run multiple instantiations of the same task on a single container instance when port mappings are used.
+    
