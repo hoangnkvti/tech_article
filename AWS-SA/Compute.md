@@ -37,6 +37,15 @@
  - EBS: Network storage product
    - EBS optimized: provide đeicated storage network -> improve speed, reduce contention with traditional data transfer
    - IOPS size: 256Kb chunk -> if operation is 256Kb -> count as 2 IOPS
+   - Snapshot: first data is backup data -> next snapshot only save changes
    - Type:
      - General purpose: Good IOPS (100-16000 IOPS/vol)
      - Provisioned IOPS SSD: Need low latency, need higher IOPS throughput 
+     - HDD optimized: lower cost, for frequently access
+     - Cold HDD: lowest cost, for inferquently access
+   - Pattern:  ![image](https://user-images.githubusercontent.com/40649408/67630661-8338cd00-f8ce-11e9-932b-743fae562f1a.png)
+  - Placement group:
+   - EC2 sẽ được settup gần nhau về mặt vật lý, same physical location -> tăng performace, giảm latency giữa các instance (k phải type nào của ec2 cũng support)
+   - Cluster: Single AZ, k thể span across AZ -> highest speed, lowest latency. Can span peered VPCs in the same Region
+   - Partition: Chia ra làm nhiều partition nhỏ hơn, multiAZ -> tăng resilience
+   - Spread: Các instance sẽ được bố trí ở những racks khác nhau (1 AZ có tối đa 7 instance), có thể single-AZ hoặc multi-AZ -> phù hợp với dự án nhỏ, ít critical instance, có thể mix đc cái type khác nhau
