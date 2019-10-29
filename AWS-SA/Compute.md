@@ -68,4 +68,6 @@
     - bridge: sử dụng internal network trong cùng 1 host
     - host: maps container ports directly to the EC2 instance's network interface directly -> you can't run multiple instantiations of the same task on a single container instance when port mappings are used.
   - Security:
-    - 
+    - Dùng fargate: ENI đc attach vào task container -> setting security thông qua SG của ENI. Chỉ có thể attach role vào container (task role)
+    - Với ec2: setting như security bthg (SG, NACL).. Attach role vào ec2 để privde permission để write log, contact với ecs hoặc dùng task role
+  -  
