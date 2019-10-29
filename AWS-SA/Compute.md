@@ -67,4 +67,5 @@
     - none: k thể interact với các resource khác, k thể port mapping
     - bridge: sử dụng internal network trong cùng 1 host
     - host: maps container ports directly to the EC2 instance's network interface directly -> you can't run multiple instantiations of the same task on a single container instance when port mappings are used.
-    
+  - Security:
+    - 
