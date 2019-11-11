@@ -42,4 +42,11 @@
   
   # Route 53
   
-   - 
+   - Can register domain or transfer domain
+   - Hosted zone: can be private or public
+   - Record set:
+     - Type: A: IPv4, AAAA: IPv6, CNAME: point a host/name, Alias: thay vì dùng IP address -> có thể alias đến AWS resource (elb, cloudfront, s3 static web...)
+   - Can config health check to check route status. Health check không check instance đằng sau elb, mà nó sẽ check cả endpoint luôn (elb,..)
+   - Failover type: set primary và secondary -> route đến secondary khi mà primary fail health check -> có thể dùng s3 static web để backup cho website
+   - Resolver: for inside vpc
+     - Inbound endpoint, Outbound endpoint: tạo elastic IP inside vpc -> có thể dùng nó để refer đến DNS, intergration thêm với rule
