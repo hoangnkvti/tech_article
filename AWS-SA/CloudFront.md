@@ -50,3 +50,5 @@
    - Failover type: set primary và secondary -> route đến secondary khi mà primary fail health check -> có thể dùng s3 static web để backup cho website
    - Resolver: for inside vpc
      - Inbound endpoint, Outbound endpoint: tạo elastic IP inside vpc -> có thể dùng nó để refer đến DNS, intergration thêm với rule
+   - Routing policty: có nhiều loại policy: weight, latency, location,...
+   - Có thể combine các routing types (traffic flow)
