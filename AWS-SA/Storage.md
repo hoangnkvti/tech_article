@@ -14,4 +14,11 @@
    - Replicate object từ bucket này sang bucket khác ở region khác, account khác.
    - One way only and no retroactive
    - Chỉ replicate non-system object, Lifecycle event không replicate
-   - 
+ - Encryption:
+   - SSE-C: dùng customer key -> customer full responsibility cho key
+   - SSE-S3: default, s3 manage key
+   - SSE-KMS: dùng kms service quản lý key -> chỉ loại này mới support CRR
+ - Optimize:
+   - Multiple upload: single max 5Gb -> multi can up 5Tb in parallel
+   - Transfer Acceleration: Dùng cloudfront edge location (từ edge location -> s3 dùng backbone transit -> tăng tốc độ) -> access đến location gần nhất để lấy data
+   - Partition + Object naming: 1 partition: 3500P - 5500G per second -> nếu cần nhiều hơn thì sử dụng prefix khi naming object
