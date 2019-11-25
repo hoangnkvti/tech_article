@@ -22,3 +22,9 @@
    - Multiple upload: single max 5Gb -> multi can up 5Tb in parallel
    - Transfer Acceleration: Dùng cloudfront edge location (từ edge location -> s3 dùng backbone transit -> tăng tốc độ) -> access đến location gần nhất để lấy data
    - Partition + Object naming: 1 partition: 3500P - 5500G per second -> nếu cần nhiều hơn thì sử dụng prefix khi naming object
+ - Glacier:
+   - Gồm nhiều vault (unique in region), mỗi region có khoảng 1000 vault
+   - Archive thì đc lưu ở vault -> gồm unique ID và description(optional, chỉ đc set khi upload, và k thể modify)
+   - K có user-defined metadata với archive
+   - Có thể request list inventory -> nhận đc notify sau khi inventory xong
+   - Archive k thể edit, chỉ có thể add và delete. K có name, chỉ có id
