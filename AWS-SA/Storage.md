@@ -39,3 +39,25 @@
  - Có thể dùng AWS DataSync để migration từ on-premise -> EFS
  - 2 performance mode: Gerenal và Max I/0 -> k thể edit sau khi create
  - Greate for big data and analytic, content sharing
+ 
+## FSx:
+ - Manage 3rd-party file system: window file server -> connect to MicrosoftAD, Lustre,...
+ - Mỗi FSx ở 1 AZ -> để HA thì mỗi AZ setting 1 FSx, có thể đồng bộ = DFS replication
+ - Có thể access từ EC2, Workspace, VMWare on cloud
+
+## Storage gateway:
+ - Dùng để migration data từ on-premise -> aws hoặc extend on-premise storage
+ - Tape gateway:
+   - Khi ở on-premise dùng VTL (vitural tape library) để quản lý backup -> integrate với Tape gateway
+   - Sync tape file đến S3 -> nếu k dùng thì move đến glacier
+ - File Gateways:
+   - Khi migration file từ on-premises lên S3: mapping 1-1 file với object S3 -> greate for migration
+   - Support SMB, NFS
+ - Volume Gateways:
+   - Volume có thể mapping vào on-premise server như là EBS
+   - Cached volume:
+     - Primary storage là S3
+     - Frequently access file thì sẽ đc cache locally
+   - Store volume:
+     - Dùng S3 để lưu snapshot
+     - Primary copy is local
