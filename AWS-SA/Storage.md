@@ -28,3 +28,14 @@
    - K có user-defined metadata với archive
    - Có thể request list inventory -> nhận đc notify sau khi inventory xong
    - Archive k thể edit, chỉ có thể add và delete. K có name, chỉ có id
+
+## EFS:
+ - Shared file system
+ - Có thể mount vào file system
+ - NFS -> cần có Mount target -> nên tạo mỗi target ở mỗi AZ trong vpc, mỗi mount target có IP và SG
+ - Có thể enable encrypt by KMS or custom CMK
+ - Permission có thể quản lý theo 2 cách: permission của linux và của aws
+ - Có thể dùng AWS Backup để backup data
+ - Có thể dùng AWS DataSync để migration từ on-premise -> EFS
+ - 2 performance mode: Gerenal và Max I/0 -> k thể edit sau khi create
+ - Greate for big data and analytic, content sharing
