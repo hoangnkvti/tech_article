@@ -53,4 +53,16 @@
   - Read opreration:
     - Query: Phải có điều kiện single PK -> chỉ có PK, sortkey là có thể dùng để search. Dù dùng filter thì bản chất capacity sử dụng vẫn k thay đổi.
     - Scan: Consume capacity để quét toàn bộ table (khác với query, chỉ tính với PK và sort key) -> có thể search toàn bộ field
-  - Data 
+  - Data được lưu theo partition:
+    - 1 partition max là 1000 WCU và 3000 RCU -> khi quá giới hạn thì sẽ partition sẽ tự tăng. 
+    - Khi write thì aws sẽ hash partition key -> xác định partition storage để lưu vào -> cùng 1 partition key (khác sort key) thì sẽ ở gần nhau -> nhiều khi việc truy xuất partition sẽ k đều -> vì vậy nên để partition key càng khác nhau càng tốt.
+  - Ví dụ khi muốn search = 1 field k phải partition key -> dùng đến Scan. Tuy nhiên scan sẽ tốn nhiều capacity -> tạo *Index*:
+    - Local secondary index: create khi tạo table, share capacity với main table. Cùng partition key với main table nhưng khác sort key
+    - Global secondary index: Khác partition key và sort key với main table -> có thể dùng query
+  - Consistency model:
+    - Eventual consistency: Khi add 1 item, query có thể chưa lấy đc ngay vì phải mất 1 thời gian đồng bộ...
+    - Có 2 loại read: eventually và strong -> strong sẽ lấy latest data, sẽ tốn 2RCU, còn eventually lấy data hiện tại, tốn 1RCU (với mỗi 4Kb size)
+  - Có backup và snapshot lưu ở s3
+  - Có thể enable restore point-in-time
+  - Đã support transaction
+  - Có thể trả theo kiểu reversed capacity
