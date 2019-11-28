@@ -34,3 +34,23 @@
    - Khi write -> đồng thời sync với region khác qua Replication Server <-> logs are streamed between replication server and agent of remote region
    - Khi 1 region fail -> promote region khác có thể full read và write trong vòng chưa đầy 1p
    
+## Aurora Serverless:
+ - Phù hợp với serverless architecture
+ - 1 ACU (Aurora capacity unit): 2CPU/4Gb RAM ~ 64CPU/122Gb
+ - Tính tiền giống lambda: charge theo capacity sử dụng
+ - Aws maintain warm instance pool -> khi có connect thì instance từ đó sẽ đc allocated, attach vào cluster storage volume. Connection được quản lý bởi shared proxy layer
+ - Limit: k có multi-AZ -> fail thì sẽ tạo instance ở AZ khác
+ - Get data thông qua API
+ 
+## Athena
+ - Serverless product query on S3
+ - Có thể query nhiều loại data structure
+ - K import data mà chỉ cần tạo bảng -> query trực tiếp từ data ở S3
+ - Phù hợp với việc query log data
+ 
+ ## DynamoDB:
+  - Primary key(unique): chứa partition key (hash key) + sort key (optional)
+  - Read opreration:
+    - Query: Phải có điều kiện single PK -> chỉ có PK, sortkey là có thể dùng để search. Dù dùng filter thì bản chất capacity sử dụng vẫn k thay đổi.
+    - Scan: Consume capacity để quét toàn bộ table (khác với query, chỉ tính với PK và sort key) -> có thể search toàn bộ field
+  - Data 
