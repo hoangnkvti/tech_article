@@ -66,3 +66,13 @@
   - Có thể enable restore point-in-time
   - Đã support transaction
   - Có thể trả theo kiểu reversed capacity
+  - Adaptive capacity: Khi mà 1 partition đc truy cập quá nhiều và vượt qua hard limit -> enable chức năng này giúp partition này có thể mượn capacity từ các partition khác
+  - DynamoDB stream: store changes to DynamoDB tables. Có thể list Key only, new image (data mới), old image (data cũ) hoặc cả new và old image -> có thể dùng lambda để trigger
+  - TTL: có thể set thời gian expire cho item ở DB
+  - Global table: multi region -> tạo replica ở các region khác. K thể add thêm region sau khi populate data
+  - Fined-grained access: restrict permission đến Dynamo cho IAM user. (dùng cho mobile app, web)
+  - DAX (Accelerator): Cache for dynamoDB
+  
+## Neptune:
+  - NoSQL Graph database
+  - Phù hợp cho Social network, knowledge graph, fraud detection, recommendation engine
