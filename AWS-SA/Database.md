@@ -89,4 +89,9 @@
   - Gồm nhiều cluster, 1 single primary và nhiều replica -> tăng read workload. Muốn tăng write workload thì phải tăng cấu hình instance
   - Support recovery point in time (in retention)
   - Cũng có share storage (cách hoạt động giống Aurora). Khi primary instance fail -> biến 1 replica thành primary có thể write đc
-  - 
+  
+## Elastic Cache:
+  - Cache service -> improve speed and reduce DB load
+  - Can host web session
+  - Có thể chọn các loại engine: Memcached, Redis: ![image](https://user-images.githubusercontent.com/40649408/70062104-c2261500-1628-11ea-92bb-6326c2f3d9be.png)
+  - Redis dùng với case data type complex, HA, nhiều instance ở multi-AZ, nhưng memcached support multi-thread
