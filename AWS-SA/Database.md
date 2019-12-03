@@ -76,3 +76,17 @@
 ## Neptune:
   - NoSQL Graph database
   - Phù hợp cho Social network, knowledge graph, fraud detection, recommendation engine
+
+## QLDB:
+  - Document based DB, có tính ACID
+  - Serverless product (giống DynamoDB)
+  - Quantum Ledger Database: provides cryptographically verifiable transactions with an append-only ledger
+  - Tracking toàn bộ changes trong DB -> phù hợp với ngân hàng, y tế, bầu cử,...
+  - Cơ chế: Hash data -> save lại. Khi có thay đổi thì lại hash data mới + hash của data cũ... lần lượt như vậy -> tracking được thứ tự, data có bị thay đổi hay k, k thể thay đổi data cũ...
+
+## DocumentDB (with MongoDB Compatibility):
+  - Là Nosql document DB
+  - Gồm nhiều cluster, 1 single primary và nhiều replica -> tăng read workload. Muốn tăng write workload thì phải tăng cấu hình instance
+  - Support recovery point in time (in retention)
+  - Cũng có share storage (cách hoạt động giống Aurora). Khi primary instance fail -> biến 1 replica thành primary có thể write đc
+  - 
