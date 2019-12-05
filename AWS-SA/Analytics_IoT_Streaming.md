@@ -13,4 +13,17 @@
  - Scale:
    - Uniform instance group: offer a simplified setup: 1 master instance group chứa 1 Ec2 instance + core instance group (>1) + more task instance group (<=48) --> setting autoscale bằng cách thêm instance ở core và task...
    - Instance fleet: mỗi loại node có nhiều type (up to 5), có thể define target capacity for on-demand instance or spot instance.
+ - 1 số tip cho performance:
+   - Cluster cùng region với S3
+   - Some best practices: ![image](https://user-images.githubusercontent.com/40649408/70156234-f6680700-16f6-11ea-95c5-80d1c962196c.png)
    
+
+## Kinesis:
+ - Kinesis: ingest a huge amount of real-time streaming data
+ - Producer: device put data to kinesis. Ex: IoT device, Mobile app,...
+ - Consumer: entity consume record from kinesis. Ex: Ec2, Kinesis Firehose, lambda
+ - Kinesis data stream: 
+   - 2 type: video stream and data stream. 
+   - Default retention period: 24h -> up to 7days with addition charge
+ - Shard: how Kinesis stream scale. 1 shard = 1Mb/s write - 2 Mb/s read - 1k records/s
+ - Data records: Gồm sequence number, partition key và blob data.
