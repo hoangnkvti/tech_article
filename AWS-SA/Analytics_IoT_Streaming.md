@@ -47,7 +47,44 @@
   - Redshift is a petabyte scale data warehousing and data analysis solution
   - Column-based DB
   - Gồm các node:
-    - Leader Node: Take data, and distribute to compute node.
-    - Compute node: execute query. Trong compute node chưa 
-    - Compute node: execute querynhi
-    - Compute node: execute query
+    - Leader Node: Take data, and distribute to compute node. Khi là 1 node riêng biệt -> free of charge
+    - Compute node: execute query. Trong compute node chứa nhiều slices (2-16), các slice này sẽ xử lý data. Ví dụ nếu 6 slices thì số file bắt đầu xử lý từ s3 nên là 6, 12, 18...
+  - Deploy inside VPC
+  - Support encryption: at rest and in transit
+  - Có thể resize cluster:
+    - Elastic: chỉ có thể change số node -> nhanh hơn (5-10p)
+    - Classic: để toàn bộ cluster -> read only mode -> provision new cluster với new size -> transfer data from old to new -> lâu hơn
+  - Khi tạo bảng có 4 type of distribute:
+     - Auto: tự động thay đổi loại
+     - Even: dữ liệu của bảng được chia đều ra các slides, nodes => dữ liệu ít join
+     - Key: phân chia dữ liệu theo điều kiện matching value được xác định bởi leader node => dữ liệu query nhiều, join lớn
+     - All: bảng nằm đầy đủ ở tất cả các node => dùng với các bảng demension nhỏ
+  - Disater recovery:
+     - CÓ thể config snapshot manually or auto
+     - Có thể setting cross-region snapshot
+     - Có thể restore only table
+     - Data ở slice thì đều có replicate copy ở slice khác ở compute node khác
+     
+## IoT architecture:
+  - IoT shadows: Represent state of real device after device gateway -> sync communication giữa device và bên sử dụng
+  - Cơ chế pub-sub, dùng MQTT topic
+  - ioT Rule: Trigger event, interact với other resource tùy vào data, message
+  - Basic Ingest: Có thể config IoT things có thể interact trực tiếp đến rule mà k qua Topic -> reduce cost
+
+## Quicksight:
+  - QuickSight is a BI and data visualization tool available in AWS
+  - Intergrate với nhiều service, lấy data -> show data visualization
+
+## Elastic Search:
+  - Elasticsearch is an AWS implementation of the ELK stack (Elasticsearch, Logstash, and Kibana) as a service
+  - Có thể intergrate với nhiều service, đặc biệt là aws log, Kinesis Firehose
+  - ELK stack (Elasticsearch, Logstash, and Kibana)
+    - Elasticsearch: Store, search và analyze. Thực ra là document DB -> store information as document
+    - Kibana: Data visualization component, có thể share cho ng khác
+    - Logstash: Logging work flow system. Có thể transform log information
+    - Beats: ingest the log to elasticsearch cluster. Có thể install agent ở OS
+  - Master nodes: provide management function. Có thể có nhiều vì HA, resilience
+  - Data nodes: execute search -> return data. Là individual server in cluster
+  - Có thể setting node của cluster access from vpc hoặc public access. Thực ra nó k nằm ở trong vpc, mà ở 1 network khác nhưng có thể connect vpc qua ENI
+  - Có thể enable Cognito to authen vào Kibana
+  - Index: collection of related document -> có thể break thành các shard -> speard các shard vào data node để achieve resilience, high throughput
