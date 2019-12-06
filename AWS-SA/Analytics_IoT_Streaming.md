@@ -27,3 +27,27 @@
    - Default retention period: 24h -> up to 7days with addition charge
  - Shard: how Kinesis stream scale. 1 shard = 1Mb/s write - 2 Mb/s read - 1k records/s
  - Data records: Gồm sequence number, partition key và blob data.
+ - Public zone -> khi kết nối ec2 cần vpc endpoint
+ 
+ ## Kinesis Firehose:
+  - Delivery real time data (from Kinesis or other sources) to supported service
+  - Có thể thực hiện transformation data theo 2 cách:
+    - Lambda function:
+    - Convert format
+  - Destination: có thể là S3, Redshift, Elastics Search, Splunk
+  - K support encryption at rest:
+    - Khi source là Kinesis stream -> encrypt luôn ở Kinesis stream
+    - Khi source khác put data vào -> enable server-side encryption
+    
+## Kinesis Data Analysis:
+  - Allow SQL queries to be executed against streaming real-time data passing through Kinesis streams or Kinesis Data Firehose.
+  - Có thể Lambda để pre-processing data
+
+## Redshift:
+  - Redshift is a petabyte scale data warehousing and data analysis solution
+  - Column-based DB
+  - Gồm các node:
+    - Leader Node: Take data, and distribute to compute node.
+    - Compute node: execute query. Trong compute node chưa 
+    - Compute node: execute querynhi
+    - Compute node: execute query
