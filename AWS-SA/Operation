@@ -1,0 +1,5 @@
+## Cloudwatch:
+ - Data point: data metric tại 1 thời điểm time point
+ - Mỗi monitoring data của service publish tại cloudwatch có namespace riêng. (có thể tạo custome namespace)
+ - Có thể tạo alarm base on status of metric -> khi qua threshold thì trigger action: Notification SNS, Autoscaling action or Ec2 action
+ - Có thể push data từ IoT device to cloudwatch thông qua cloudwatch endpoint
