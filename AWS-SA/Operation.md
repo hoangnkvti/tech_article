@@ -49,4 +49,23 @@
     - Describe toàn bộ config sẽ đc change, difference giữa stack mới và cũ
     - Show toàn bộ action mà update behavior sẽ làm
     - Có thể setting để member junior upload -> senior review, approve và execute change set thông qua stack policy
-    - 
+  - Template:
+    - Có thể reuse
+    - Khi dùng hard code -> sẽ k reuse được, bởi vì khi tạo có thể xảy ra lỗi already exist -> non portable -> fix: có thể dùng parameter store, refer, add default value, pseudo paramenter, intrinsic function, k specify resouce name -> cloudformation sẽ gắn thêm random string
+    - Có thể share với các account khác
+  - Cross Stack Ref: Có thể cross stack (refer tới stack khác) bằng việc dùng Output ở stack kia => refer đến output đó
+  - Nested Stack: 
+    - Reuse block of other template. Có thể ref trực tiếp = link từ S3 -> not reusing stack, just reuse template
+    - Có thể ref đc parameter từ nested stack
+  - Khi tạo stack cần assign role to stack
+    - Nếu k chỉ định role -> permission sẽ là account đang sử dụng
+    - Có thể tạo role -> edit trust policy để cloudformation có thể assume đc role đó
+  - StackSet:
+    - Có thể deploy cloudformation ở multiple region ở multiple account
+    - Tạo 2 role: 1 role ở account administrator, và 1 role ở account execute -> tạo trust relationship
+  - Disable recovery: trade off -> sử dụng kết hợp với Cloudformation để tăng speed, perfomance
+    - Backup and restore: slowest to recovery
+    - Pilot light: keep minimal set of infrastructure ready to go (replica, copy file server) -> khi xảy ra disater thì switch sang -> với aws thì tốn ít cost, vì aws đã support
+    - Warm standby: extend pilot light, run 1 hệ thống standby có thể nhanh chóng start khi có disater (shutdown instance, ec2 với cấu hình thấp hơn...) -> additional cost for additional infra
+    - Running in multiple region
+  
