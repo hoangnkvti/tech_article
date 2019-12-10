@@ -68,4 +68,20 @@
     - Pilot light: keep minimal set of infrastructure ready to go (replica, copy file server) -> khi xảy ra disater thì switch sang -> với aws thì tốn ít cost, vì aws đã support
     - Warm standby: extend pilot light, run 1 hệ thống standby có thể nhanh chóng start khi có disater (shutdown instance, ec2 với cấu hình thấp hơn...) -> additional cost for additional infra
     - Running in multiple region
-  
+  - Custom resource: 
+    - Cloudformation gửi 1 request đến lambda hoặc SNS -> thực hiện build custom resource, sau đó response về URL đc defined
+
+## Elastic Beanstalk
+ - Based on Cloud Formation
+ - Application: container chứa environment, versions
+ - Environment: có 2 tier
+   - Worker tier:
+   - Web server tier: có thể chọn platform
+ - Trong 1 application có thể swap environment URL 
+ - Deploy policy:
+   - Immutable: tạo 1 env mới với new version -> swap URL sang
+   - All at once: overwrite với new version
+ - Có thể save lại config -> restore lại version config đó
+ - Có thể custom config ở file .ebextensions trong source code
+ 
+ ## 
