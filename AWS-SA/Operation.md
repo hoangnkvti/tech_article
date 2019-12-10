@@ -84,4 +84,12 @@
  - Có thể save lại config -> restore lại version config đó
  - Có thể custom config ở file .ebextensions trong source code
  
- ## 
+ ## OpsWorks
+ - OpsWorks is a deployment and infrastructure management system based on Chef available in AWS
+ - 1 Stack có 1 hoặc nhiều layer (gồm recipes, setting,...), mỗi layer có 1 hoặc nhiều instance
+ - Auto healing: dettect the failure of instance -> re-provision this instance
+ - Có 3 loại instance:
+   - 24/7
+   - Time-based: chỉ định time
+   - Load-based: respond to load characteristics (%CPU,..)
+ - 
