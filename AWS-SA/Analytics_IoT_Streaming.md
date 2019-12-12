@@ -1,3 +1,5 @@
+# Analytics + IoT Streaming
+
 ## MapReduce EMR
  - Có thể process lượng data rất lớn một cách song song
  - 2 main components: MAP và REDUCE
