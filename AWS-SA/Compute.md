@@ -1,3 +1,4 @@
+# Compute
 
 ## Lambda:
  - 1 Lambda function nên thực hiện 1 activity, time limit là 15p
