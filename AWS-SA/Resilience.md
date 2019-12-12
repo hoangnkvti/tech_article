@@ -1,3 +1,4 @@
+# Resilience
 
 ## Service:
  - EC2: take snapshot và save ở S3 -> spread across multiAZs. Có thể copy snapshot sang region khác
