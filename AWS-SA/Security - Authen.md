@@ -28,6 +28,8 @@
   - SCP: khác với policy bthg, quy định cái gì làm được và cái gì k làm đc -> overlay với IAM policy (intersect)
   - DENY luôn win ALLOW
   - Master account k bị ảnh hưởng bởi SCP
+  - K xóa đc Organization có account
+  - Có thể tạo account hoặc invite account khác (nếu email k tới thì cancel rồi tạo lại)
 
 ## KMS:
   - CMK: 
