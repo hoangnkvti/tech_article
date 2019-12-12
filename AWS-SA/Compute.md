@@ -21,6 +21,8 @@
  - Liên kết với nhiều service: lambda(serverless), mock-test, dynamoDB,...
  - Logs: có thể intergration với Cloudwatch, Xray
  - Khi update code -> chia ra làm các stage
+ - Method Request/ Method Response: are API's interface with API's frontend (client)
+ - Integration Request/ Integration Response: are API's interface with API's backend (often is lambda)
 
 
 ## EC2
