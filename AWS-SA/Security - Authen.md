@@ -1,3 +1,5 @@
+# Security - Authen
+
 ## IAM:
  - Real identity: Role, User (has ARN)
  - DENY always overwrite ALLOW
@@ -42,20 +44,20 @@
   - Khi rotation -> add thêm 1 backing key, inactive backing key cũ. Những backing key cũ k thể encryption nhưng có thể decrypt
   - Đạt chuẩn FIPS 140-2
   
-# CloudHSM
+## CloudHSM
   - Là hardware security module -> có thể generate key, perform cryptographic operation. Aws chỉ mannage, chứ k access được vào key material bên trong
   - Interaction via industry standard APIs, no normal APIs: PKCS#11, JCE, CNG (KMS k support những loại này)
   - Inject vào VPC qua ENI -> resource connect đến cloudHSM qua ENI
   - Đạt chuẩn FIPS 140-3
   - Có thể access từ outside vpc (qua vpn, direct connect, vpc endpoint,..)
   - Nếu muốn control physical hardware -> có thể dùng on-premise HSM
-# ACM: AWS Certificate Manager
+## ACM: AWS Certificate Manager
   - Provide X509 v3 SSL/TLS certificate
   - Native integrate with ELB, Cloudfront, Elastic Beanstalk, API Gateway
   - Add SSL certificate -> phải verify ownership of domain
   - Private key thì sẽ đc store ở KMS -> các integration service sẽ tương tác với KMS để lấy private key (k bh ở trạng thái plaintext) -> ACM k dùng được với service mà k integrate (ec2,..)
  
- #  AWS Directory Service
+ ##  AWS Directory Service
    - Là 1 service group các product: Amazon Cloud Directory, Simple AD, Microsoft Active Directory, AD Connector và Cognito
    - 2 group: Amazon Cloud Directory + Cognito và còn lại
    - Simple AD: open source, is not a true MAD, but it is subset of MAD,
@@ -64,19 +66,19 @@
    - Simple AD, Microsoft Active Directory, AD Connector: HA, deploy ở nhiều AZ, có IP address (Giống rds). Có thể dùng để provide access to aws service, console.
   <img width="804" alt="Screen Shot 2019-10-20 at 1 35 08" src="https://user-images.githubusercontent.com/40649408/67148384-08721f80-f2da-11e9-88b3-61da9e6d4805.png">
 
- #  AWS WAF
+##  AWS WAF
    - Control traffic reach to ELB, Cloudfront, API Gateway -> traffic is filtered by WAF before connect to these services
    - Unit of WAF: web ACL: Condition, rule contains conditions, web acl contains rules
    - Có 2 loại rule: regular rule, rate-based rule: base on frequency (VD: request 2000 lần trong 1 phút...)
    - Có nhiều loại condition: dựa vào địa lý, cross-site scripting, IP address,....
 
-#  AWS Shield
+##  AWS Shield
   - Protect DDos, đứng trước WAF
   - Có 2 version: 
      - Standard: protect common DDos attack, always on
      - Advanced: extra cost (3k$/month) -> có nhiều feature hơn, có analytics, report và team support, cost protection (refund lại cost phát sinh bởi DDos), k mất cost cho AWS WAF, protection with Elastic IP
 
-# AWS GuardDuty
+## AWS GuardDuty
   - Can access data source from cross account (VPC Flow logs, Cloudtrail, R53 DNS Query, Threat intelligency: finding ra các potential security issue)
   - Account có thể enable GuardDuty -> invite những account khác, và trở thành Master Guard
   - 1 Account chỉ là member của 1 GuardDuty
