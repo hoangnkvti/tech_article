@@ -7,3 +7,8 @@ nav_order: 2
 has_children: true
 permalink: /AWS-SA/
 ---
+layout: default
+title: index
+nav_exclude: true
+permalink: /
+---
