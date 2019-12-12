@@ -27,6 +27,8 @@
  - Kinesis data stream: 
    - 2 type: video stream and data stream. 
    - Default retention period: 24h -> up to 7days with addition charge
+   - Video stream:
+      - Có thể playback. Dùng GetMedia (GetMedia API), HLS (Http live streaming, dùng URL ở location bar của safari, Edge), MPEG-HASH
  - Shard: how Kinesis stream scale. 1 shard = 1Mb/s write - 2 Mb/s read - 1k records/s
  - Data records: Gồm sequence number, partition key và blob data.
  - Public zone -> khi kết nối ec2 cần vpc endpoint
