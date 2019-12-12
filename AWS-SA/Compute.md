@@ -36,7 +36,7 @@
  - Instance store: non persistant -> use for cache, temporary storage, need high IOPS throughput
     -> not use: share storage, durability, elasticity
  - EBS: Network storage product
-   - EBS optimized: provide đeicated storage network -> improve speed, reduce contention with traditional data transfer
+   - EBS optimized: provide dedicated storage network -> improve speed, reduce contention with traditional data transfer
    - IOPS size: 256Kb chunk -> if operation is 256Kb -> count as 2 IOPS
    - Snapshot: first data is backup data -> next snapshot only save changes
    - Type:
@@ -45,7 +45,9 @@
      - HDD optimized: lower cost, for frequently access
      - Cold HDD: lowest cost, for inferquently access
    - Pattern:  ![image](https://user-images.githubusercontent.com/40649408/67630661-8338cd00-f8ce-11e9-932b-743fae562f1a.png)
-  - Placement group:
+   - EBS volumn có thể modified mà k cần detact hoặc restart instance. Chú ý: gp2 root volume k thể modified về st1 hoặc sc1, khi k phải root volume mà modified về st1 hoặc sc1 thì min volume thảo mãn đk min st1, sc1.
+   
+ - Placement group:
    - EC2 sẽ được settup gần nhau về mặt vật lý, same physical location -> tăng performace, giảm latency giữa các instance (k phải type nào của ec2 cũng support)
    - Cluster: Single AZ, k thể span across AZ -> highest speed, lowest latency. Can span peered VPCs in the same Region
    - Partition: Chia ra làm nhiều partition nhỏ hơn, multiAZ -> tăng resilience
