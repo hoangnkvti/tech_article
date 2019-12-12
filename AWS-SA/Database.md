@@ -1,3 +1,5 @@
+# Database
+
 ## DB Model:
  - Relational: 
    - ACID system -> làm chậm tốc độ xử lý và giảm khả năng scale
