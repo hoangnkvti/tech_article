@@ -7,9 +7,10 @@
  - Có thể chèn thêm variable: `"Condition": {"StringLike": {"s3:prefix": ["${aws:username}/*"]}}`
  - Có thể add other conditions
  - Permissions Boundaries: Setting allow or deny một hoặc nhiều action nào đó cho IAM role hoặc user -> permission của role hoặc user sẽ là phần giao của Permission boundaries, identity-based policy và resource-based policy
- - Creating and Managing an IAM Identity Provider: lấy SAML metadata document that you get from the IdP  
+
 ## Identity Federation:
  - Thông qua Identity Federation: không cần phải viết code authen, có thể sử dụng sẵn các identity provider (fb, gg,...), authen thông qua đó
+ - Creating IAM Identity Provider: lấy SAML metadata document that you get from the IdP trước -> tạo identity provider  
  - Khi muốn cấp quyền cho 1 user của identity provider access resource aws -> dùng STS với api: `assumeRoleWithWebIdentity`
  - Dùng AssumeRoleWithWebIdentity: k access đc vào console, còn nếu dùng AssumeRoleWithSAML thì có thể truy cập đc vào console
 
