@@ -53,10 +53,13 @@
   - Đạt chuẩn FIPS 140-3
   - Có thể access từ outside vpc (qua vpn, direct connect, vpc endpoint,..)
   - Nếu muốn control physical hardware -> có thể dùng on-premise HSM
+  
 ## ACM: AWS Certificate Manager
   - Provide X509 v3 SSL/TLS certificate
   - Native integrate with ELB, Cloudfront, Elastic Beanstalk, API Gateway
   - Add SSL certificate -> phải verify ownership of domain
+  - Với third-party thì k tự động renew, còn request bởi ACM thì sẽ auto renew
+  - Có 2 cách validation: DNS và Email
   - Private key thì sẽ đc store ở KMS -> các integration service sẽ tương tác với KMS để lấy private key (k bh ở trạng thái plaintext) -> ACM k dùng được với service mà k integrate (ec2,..)
  
  ##  AWS Directory Service
