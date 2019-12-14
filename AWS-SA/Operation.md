@@ -39,6 +39,8 @@
     - Data có thể lưu ở string, secure string, string list
     - Các resource như lambda, ec2, ecs,.. có thể access để lấy data từ parameter store
     - Serverless, resilient, scalable
+  - Session manager: access vào ec2 instance (1-click ở console hoặc CLI) mà không cần open inbound ports and manage bastion hosts. (phải cài ssm agent ở ec2-instance). Có thể dùng policy để phân quyền user nào đc start session ở instance nào.
+  - Maintainance window: chạy schedule các SSM Document ở target instance. Ví dụ như xóa folder temp ở ec2,....
     
 ## Cloud Formation:
   - Template: json hoặc yaml format, define resource and architecture
