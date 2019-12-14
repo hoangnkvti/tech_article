@@ -17,7 +17,26 @@
     - Add compute power than snowball
     - Use to run local compute function, run lambda function
     - 3 version: Storage optimized, compute optimized, Compute optimized with GPU
+    - Khi migrate DB Large Data Stores -> dùng kết hợp DMS + Snowball Edge ( vì phải dùng AWS Schema Conversion Tool (AWS SCT) extract local data) + S3 là nhanh nhất
   - Snowmobile:
     - Là mobile datacenter. 
     - Use for data center migration or >10Pb
     - Sau khi request -> drive đến location -> transfer data -> drive back to aws
+
+## Applicaiton Discovery Service:
+  - Gathering information about their on-premises data centers.
+  - Collects and presents server specification information, performance data, and details of running processes and network connections
+  - Provides protection for the collected data by encrypting it both in transit to AWS and at rest within the Application Discovery Service data store.
+  - Integrated with AWS Migration Hub (which simplifies your migration tracking as it aggregates your migration status information into a single console) -> All discovered data is stored in your AWS Migration Hub home region
+  - Có 2 cách để collect data:
+    - Agentless discovery: deploying the AWS Agentless Discovery Connector (OVA file) through your VMware vCenter.
+    - Agent-based discovery: deploying the AWS Application Discovery Agent on each of your VMs and physical servers
+  ![image](https://user-images.githubusercontent.com/40649408/70844237-98b78580-1e81-11ea-8377-65e062587236.png)
+ - Nếu k dùng đc 2 loại agent -> upload trực tiếp data của server lên Migration Hub
+
+## Server Migration Service
+  - Is an agentless service which makes it easier and faster to migrate thousands of on-premises workloads to AWS.
+  - 4 stages: schedule -> uploading (up VMDK to s3) -> converting (convert VMDK to EBS snapshot) -> create AMI
+  - Requires a connector that orchestrates the workflow of the migration process. This connector is deployed in the vCenter.
+  - Chia làm nhiều group trong application khi migrate application    
+  ![image](https://user-images.githubusercontent.com/40649408/70844423-357b2280-1e84-11ea-8c0a-37553bb7677b.png)
