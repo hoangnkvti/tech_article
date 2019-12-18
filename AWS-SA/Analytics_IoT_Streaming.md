@@ -68,7 +68,9 @@
      - Có thể setting cross-region snapshot
      - Có thể restore only table
      - Data ở slice thì đều có replicate copy ở slice khác ở compute node khác
-     
+  - Không có replica
+  - Khi có 2 process, 1 chậm, 1 nhanh và để k làm ảnh hưởng đến queries của process -> Dùng Workload Management group, tạo 2 group tách biệt
+
 ## IoT architecture:
   - IoT shadows: Represent state of real device after device gateway -> sync communication giữa device và bên sử dụng
   - Cơ chế pub-sub, dùng MQTT topic
