@@ -9,6 +9,7 @@
    - Document (mongoDB): nested information
    - Column-based (Redshift): data analytics, reporting, warehousing
    - GraphDB (Neo4j, AWS Neptune): social network, dynamic relationship
+
 ## RDS:
  - Mỗi instance sẽ có 1 EBS gắn kèm
  - Khi tạo DB:
