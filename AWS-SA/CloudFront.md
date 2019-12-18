@@ -19,8 +19,11 @@
  - Khi dùng custom origin -> có public IP address
  - Cloudfront có thể ở trạng thái private
  - Có thể logging vào S3, view đc nhiều analytic
- 
- ## Security:
+ - Có thể streaming on-demand hoặc live24/7
+ ![image](https://user-images.githubusercontent.com/40649408/71098071-706ab680-21f4-11ea-8cf1-0262625d77b8.png)
+ ![image](https://user-images.githubusercontent.com/40649408/71098175-a14aeb80-21f4-11ea-918f-b1b92a85ac60.png)
+
+## Security:
   - Có 2 layer: WAF (phải setting manually) -> Cloudfront
   - SSL: Cloudfront phải có certificate về https (public certificate)
   - Restrict origin access: Dùng OAI (Origin Access Identity) để resitrct access chỉ cho phép cloudfront access file S3, k thể truy cập public file đó
