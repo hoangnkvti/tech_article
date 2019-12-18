@@ -78,6 +78,8 @@
    - Unit of WAF: web ACL: Condition, rule contains conditions, web acl contains rules
    - Có 2 loại rule: regular rule, rate-based rule: base on frequency (VD: request 2000 lần trong 1 phút...)
    - Có nhiều loại condition: dựa vào địa lý, cross-site scripting, IP address,....
+   - Khi kết hợp với ASG thì nên dùng waf-sandwich model: request -> 1 elb -> waf để filter safe traffic -> elb thứ 2
+![image](https://user-images.githubusercontent.com/40649408/71099304-6944a800-21f6-11ea-8a61-ee803752f5f4.png)
 
 ##  AWS Shield
   - Protect DDos, đứng trước WAF
