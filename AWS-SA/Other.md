@@ -11,3 +11,8 @@
  - Deep Learning-based image and video analysis
  - Có thể làm đc nhiều chức năng: Face-based user verification, Facial recognition, Text detection,....
  - Provide CreateStreamProcessor có thể detect và recognize faces in a streaming video -> có thể input Kinesis stream and output ra Kinesis stream
+
+## Amazon WorkDocs
+  - Amazon WorkDocs is a fully managed, secure content creation, storage, and collaboration service
+  - Support share restrict, time-based file sharing
+  
