@@ -36,6 +36,7 @@
    - Tạo Cross-region replica
    - Khi write -> đồng thời sync với region khác qua Replication Server <-> logs are streamed between replication server and agent of remote region
    - Khi 1 region fail -> promote region khác có thể full read và write trong vòng chưa đầy 1p
+   - Có thể setting Aurora là replication của 1 MySQL DB Instance (trong hoặc ngoài RDS)
    
 ## Aurora Serverless:
  - Phù hợp với serverless architecture
