@@ -48,7 +48,9 @@
      - Cold HDD: lowest cost, for inferquently access
    - Pattern:  ![image](https://user-images.githubusercontent.com/40649408/67630661-8338cd00-f8ce-11e9-932b-743fae562f1a.png)
    - EBS volumn có thể modified mà k cần detact hoặc restart instance. Chú ý: gp2 root volume k thể modified về st1 hoặc sc1, khi k phải root volume mà modified về st1 hoặc sc1 thì min volume thảo mãn đk min st1, sc1.
-   
+   - RAID0: dung lượng = tổng các raid -> focus vào performance. RAID1: dùng lượng = dùng lượng từng RAID -> focus vào fault tolerance 
+   ![image](https://user-images.githubusercontent.com/40649408/71156260-faf9f700-2282-11ea-92eb-b6a33bc99e5a.png)
+
  - Placement group:
    - EC2 sẽ được settup gần nhau về mặt vật lý, same physical location -> tăng performace, giảm latency giữa các instance (k phải type nào của ec2 cũng support)
    - Cluster: Single AZ, k thể span across AZ -> highest speed, lowest latency. Can span peered VPCs in the same Region
