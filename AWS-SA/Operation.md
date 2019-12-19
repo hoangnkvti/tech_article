@@ -19,6 +19,7 @@
     - Khi setting destination -> S3: có thể config prefix, encryption, log validation...
   - Khi apply với all organization: Account member sẽ được kế thừa, nhìn đc config của single trail nhưng k sửa được
   - Apply với Cloudwatch, assign role to cloudtrail -> gửi trail log đến cloudwatch log stream -> tạo filter metric với action tương ứng
+  - Có thể config CloudTrail của nhiều account lưu vào 1 bucket (refer: https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-receive-logs-from-multiple-accounts.html)
   
 ## Route53 Logging:
   - Intergrate với cloudwatch log -> assign role to route53 logging -> send log to cloudwatch log
