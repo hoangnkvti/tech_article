@@ -1,4 +1,4 @@
-# Other service:
+# Other service
 
 ## Glue:
  - Fully managed extract, transform, and load (ETL) service that makes it easy for customers to prepare and load their data for analytics -> discover data, transform it, and make it available for search and querying.
