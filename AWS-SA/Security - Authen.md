@@ -96,4 +96,8 @@
   - Dựa vào data -> dùng ML để tìm ra sự bất thường -> tạo ra cloudwatch event
   
 ## Notes:
-  - Config IDS
+  - Config IDS/IPS: có thể có 1 vài cách:
+    - Instal IDS/IPS agent ở ec2 instance
+    - Setup IDS/IPS ở proxy server/NAT
+    - Setup 1 security-vpc chứa ec2 instance có khả năng IDS/IPS -> peer với vpc chính, chỉ accept traffic từ security-vpc
+    
