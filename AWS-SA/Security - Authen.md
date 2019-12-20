@@ -94,3 +94,6 @@
   - Trusted IP: IP mà k generate finding
   - Finding: k real time
   - Dựa vào data -> dùng ML để tìm ra sự bất thường -> tạo ra cloudwatch event
+  
+## Notes:
+  - Config IDS
