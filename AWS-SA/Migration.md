@@ -40,3 +40,13 @@
   - Requires a connector that orchestrates the workflow of the migration process. This connector is deployed in the vCenter.
   - Chia làm nhiều group trong application khi migrate application    
   ![image](https://user-images.githubusercontent.com/40649408/70844423-357b2280-1e84-11ea-8c0a-37553bb7677b.png)
+
+
+## Notes:
+  - Migrate VPC using IPv4 to IPv6:
+    - Step 1: Associate an IPv6 CIDR Block with Your VPC and Subnets
+    - Step 2: Update Your Route Tables
+    - Step 3: Update Your Security Group Rules
+    - Step 4: Change Your Instance Type
+    - Step 5: Assign IPv6 Addresses to Your Instances
+    - Lưu ý: NAT gateway k support IPv6 -> dùng Egress-only internet gateway
