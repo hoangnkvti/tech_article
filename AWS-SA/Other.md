@@ -19,3 +19,9 @@
 ## Amazon Cloudsearch
   - Amazon CloudSearch is a managed service in the AWS Cloud that makes it simple and cost-effective to set up, manage, and scale a search solution for your website or application.
   - Supports 34 languages and popular search features such as highlighting, autocomplete, and geospatial search
+## Cognito:
+  - Amazon Cognito lets you add user sign-up, sign-in, and access control to your web and mobile apps quickly and easily
+  - User pool: User directory, add sign-in, sign-up function
+  - Identity pool: is a way to authorize your users to use the various AWS services
+  ![image](https://user-images.githubusercontent.com/40649408/71245401-f05d6180-2357-11ea-95b3-73422a99e703.png)
+
