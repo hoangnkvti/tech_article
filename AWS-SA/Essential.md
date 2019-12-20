@@ -18,6 +18,7 @@
  - AWS Public Zone: S3, DynamoDB, CWLogs,...
  - Mỗi subnet thì có 5 reserved IP: .0, .1, .2, .3, .255, và giữa những subnet thì sẽ k có chuyện overlap IP CIDR
  - Khi muốn thiết kế multicast -> dùng phương pháp Overlay Multicast
+ - Có thể expand sau khi create: add the secondary CIDR blocks to the VPC
  
 ## Route table:
  - Mỗi subnet dùng 1 IP cho router (.1)
