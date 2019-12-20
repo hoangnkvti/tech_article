@@ -31,6 +31,9 @@
   - Master account k bị ảnh hưởng bởi SCP
   - K xóa đc Organization có account
   - Có thể tạo account hoặc invite account khác (nếu email k tới thì cancel rồi tạo lại)
+  - Muốn leave organization:
+     - Access to billing in the member account
+     - Đc cấp quyền leave organization
 
 ## KMS:
   - CMK: 
@@ -48,6 +51,7 @@
   - Đạt chuẩn FIPS 140-2
   - Khi set policy CMK cho 1 user (root user cũng sẽ k có permission), rồi delete user đó -> CMK become unmanageable -> contact AWS to regain access
   - CMM thì encrypt và decrypt data key, còn data key thì encrypt và decrypt customer data.
+  
 ## CloudHSM
   - Là hardware security module -> có thể generate key, perform cryptographic operation. Aws chỉ mannage, chứ k access được vào key material bên trong
   - Interaction via industry standard APIs, no normal APIs: PKCS#11, JCE, CNG (KMS k support những loại này)
