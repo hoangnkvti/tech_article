@@ -52,7 +52,7 @@
  - K import data mà chỉ cần tạo bảng -> query trực tiếp từ data ở S3
  - Phù hợp với việc query log data
  
- ## DynamoDB:
+## DynamoDB:
   - Primary key(unique): chứa partition key (hash key) + sort key (optional)
   - Read opreration:
     - Query: Phải có điều kiện single PK -> chỉ có PK, sortkey là có thể dùng để search. Dù dùng filter thì bản chất capacity sử dụng vẫn k thay đổi.
@@ -76,6 +76,7 @@
   - Global table: multi region -> tạo replica ở các region khác. K thể add thêm region sau khi populate data
   - Fined-grained access: restrict permission đến Dynamo cho IAM user. (dùng cho mobile app, web)
   - DAX (Accelerator): Cache for dynamoDB
+  - Có thể config SQS trước dynamo để reduce provisioned write throughput
   
 ## Neptune:
   - NoSQL Graph database
