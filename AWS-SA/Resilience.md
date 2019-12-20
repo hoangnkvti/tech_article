@@ -21,8 +21,7 @@
  - Có thể setting scale by schedule
  - Có thể setting suspend process của ASG (launch, health check,..)
  
- 
- ## ELB:
+## ELB:
   - ELB có DNS -> dùng route 53 trỏ đến DNS này
   - Có thể cross-zone for cross AZ
   - Có thể là public facing ELB hoặc internal 
@@ -53,3 +52,4 @@
     - Suppport static IP address
     - Uninterupted end-to-end encryption: Network LB. Network LB cũng k thể làm đc Offloading SSL
   - https://aws.amazon.com/elasticloadbalancing/features/#compare
+  - Support Proxy Pro
