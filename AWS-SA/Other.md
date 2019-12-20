@@ -15,4 +15,7 @@
 ## Amazon WorkDocs
   - Amazon WorkDocs is a fully managed, secure content creation, storage, and collaboration service
   - Support share restrict, time-based file sharing
-  
+
+## Amazon Cloudsearch
+  - Amazon CloudSearch is a managed service in the AWS Cloud that makes it simple and cost-effective to set up, manage, and scale a search solution for your website or application.
+  - Supports 34 languages and popular search features such as highlighting, autocomplete, and geospatial search
