@@ -25,3 +25,6 @@
   - Identity pool: is a way to authorize your users to use the various AWS services
   ![image](https://user-images.githubusercontent.com/40649408/71245401-f05d6180-2357-11ea-95b3-73422a99e703.png)
 
+## Amazon Data Lifecycle Manager:
+  - Support EBS
+  - Dùng để automate snapshot EBS (có thể by tag)
