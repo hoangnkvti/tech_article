@@ -28,3 +28,7 @@
 ## Amazon Data Lifecycle Manager:
   - Support EBS
   - Dùng để automate snapshot EBS (có thể by tag)
+
+## AWS Schema Conversion Tool
+  - The AWS Schema Conversion Tool makes heterogeneous database migrations predictable by automatically converting the source database schema and a majority of the database code objects, including views, stored procedures, and functions, to a format compatible with the target database
+  
