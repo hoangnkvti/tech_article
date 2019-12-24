@@ -88,6 +88,7 @@
    - All at once: overwrite với new version
  - Có thể save lại config -> restore lại version config đó
  - Có thể custom config ở file .ebextensions trong source code
+ - Có thể tạo được custom platform
  
  ## OpsWorks
  - OpsWorks is a deployment and infrastructure management system based on Chef available in AWS
@@ -97,4 +98,3 @@
    - 24/7
    - Time-based: chỉ định time
    - Load-based: respond to load characteristics (%CPU,..)
- - 
