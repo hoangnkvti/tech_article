@@ -4,6 +4,10 @@
  - Storage type: ![image](https://user-images.githubusercontent.com/40649408/68846778-f0db5a80-0710-11ea-8d06-d0f08297f8ee.png)
  - Intelligent tiering: Chia làm 2 tier, 1 cho frequent access và 1 cho infrequent access (giá giống như Standard và Standard-IA)
  - Versioning: default: overwrite -> khi enable versoning, mỗi khi put object sẽ có 1 version ID tương ứng. Các version thì độc lập, có thể khác storage type. Khi delete -> add delete marker
+ - Requester Pays Buckets: 
+   - Owner trả phí lưu trữ, còn requester trả phí request data
+   - Khi request, requester sẽ gửi thêm header `x-amz-request-payer` (những request không có header hoặc request khác sẽ đều bị tính cho owner)
+   - Không support anynomous request, SOAP, BitTorrent
  - Locking: có 2 loại:
    - Retention period: K cho update hoặc delete object trong 1 khoảng thời gian 
    - Legal hold: Giống Retention period nhưng k có thời gian expire
