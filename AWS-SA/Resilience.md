@@ -44,7 +44,7 @@
     - Có thể điều hướng theo content-based rule:
        - Host-based: host field on HTTP header
        - Path-based: URL path on HTTP header
-    - Có thể dùng với nhiều certificates
+    - Có thể dùng với nhiều certificates (dùng với Server Name Indication (SNI))
     - Support EKS, ECS, HTTP/2, HTTPS, Sticky session, WAF, access log
   - Network LB:
     - Operate at layer 4 (TCP)
