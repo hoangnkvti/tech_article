@@ -1,5 +1,13 @@
 # Migration
 
+## The 6 R’s:
+ - Rehosting: lift-and-shift. Move server --> host server in aws
+ - Replatform: lift-tinker-and-shift. Optimize bằng cách chuyển đổi platform, nhưng vẫn giữ architect. VD: sql move lên rds
+ - Repurchase: Moving to a different product --> dùng các dịch vụ trả phí thay thế
+ - Refactoring / Re-architecting: đổi lại architect của hệ thống hướng tới cloud -> most expensive but most benificial
+ - Retire: bỏ đi các phần hệ thống k còn dùng
+ - Retain: Giữ nguyên đó và hiện tại k làm gì cả
+
 ## Data Pipeline:
  - Serverless product, create workflow-style data migration and data transformation pipeline
  - Có thể kết hợp với EMR -> xử lý song song nhiều luồng (parallel compute)
