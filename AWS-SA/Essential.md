@@ -114,6 +114,7 @@
   - Data k đc encrypted thông qua direct connect
   - Direct connect gateway: global resource, assocate với VPW ở nhiều region, reduce admin overhead
   - K có tính chất bắc cầu
+  - Link Aggregation Groups (LAG): order and manage multiple direct connect ports as a single larger connection instead of as separate discrete connections.
   
 # Transit Gateway
   - Có thể làm trung gian, connect đến các VPC, support transitive routing
