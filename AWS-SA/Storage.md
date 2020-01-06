@@ -38,11 +38,16 @@
  - Shared file system
  - Có thể mount vào file system
  - NFS -> cần có Mount target -> nên tạo mỗi target ở mỗi AZ trong vpc, mỗi mount target có IP và SG
- - Có thể enable encrypt by KMS or custom CMK
+ - Có thể enable encrypt by KMS or custom CMK -> both at rest and at transis
  - Permission có thể quản lý theo 2 cách: permission của linux và của aws
  - Có thể dùng AWS Backup để backup data
  - Có thể dùng AWS DataSync để migration từ on-premise -> EFS
- - 2 performance mode: Gerenal và Max I/0 -> k thể edit sau khi create
+ - 2 performance mode  -> k thể edit sau khi create
+   - Gerenal
+   - Max I/0
+ - Throughput mode:
+   - Bursting Throughput: scales as the size of your file system in the standard storage class grows.
+   - Provisioned Throughput: instantly provision the throughput of your file system (in MiB/s) independent of the amount of data stored.
  - Greate for big data and analytic, content sharing
  
 ## FSx:
