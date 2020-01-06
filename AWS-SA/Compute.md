@@ -31,6 +31,7 @@
    - Khi tạo AMI: tạo snapshot của EBS -> AMI sẽ refer đến snapshot đó
    - Regional base -> có thể copy sang region khác (khi đó các snapshot đang đc refer cũng sẽ đc copy)
    - Default: chỉ có account owner có permission -> có thể setting public để share cho mọi ng, hoặc share cho 1 số account
+   - Tạo AMI với Instance store volume thì phải bundle lên S3 --> tạo instance từ AMI refer from S3
  - VM: latest: Nitro, near bare metal
  - Các type:
    - Chia theo các dòng
