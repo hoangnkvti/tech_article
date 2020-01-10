@@ -32,3 +32,7 @@
 ## AWS Schema Conversion Tool
   - The AWS Schema Conversion Tool makes heterogeneous database migrations predictable by automatically converting the source database schema and a majority of the database code objects, including views, stored procedures, and functions, to a format compatible with the target database
   
+## Amazon Managed Blockchain
+  - Is a fully managed service that makes it easy to create and manage scalable blockchain networks using the popular open source frameworks Hyperledger Fabric and Ethereum
+  -  Send invitation to add member (same of different aws account)
+  - 
