@@ -35,7 +35,7 @@
      - Access to billing in the member account
      - Đc cấp quyền leave organization
   - Account k phải root vẫn có thể xem đc Billing, và đc hưởng ưu đãi về cost (volume, instance)
-  - 
+  - Các account member chỉ có thể xem của mình, k xem đc của member khác, chỉ master account mới xem đc của member khác
 
 ## KMS:
   - CMK: 
