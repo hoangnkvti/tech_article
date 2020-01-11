@@ -22,7 +22,7 @@
  
 ## Route table:
  - Mỗi subnet dùng 1 IP cho router (.1)
- - IP nào cụ thể hơn thì sẽ đc ưu tiên (/32 > /16)
+ - IP nào cụ thể hơn thì sẽ đc ưu tiên (/32 > /16) (longest prefix match)
  - Có thể tạo custom RT -> attach vào subnet: 1 subnet chỉ đc associate với 1 RT, 1 RT có thể associate với nhiều subnet
  - VPC luôn có 1 default RT
  
