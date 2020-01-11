@@ -102,3 +102,6 @@
    - Deregisters any currently registered instances.
    - Automatically registers the layer's instances when they come online and deregisters instances when they go offline, including load-based and time-based instances.
    - Automatically starts routing requests to registered instances in their Availability Zones.
+ - We recommend that you use one of the following to update your online instances.
+   - Create and start new instances to replace your current online instances. Then delete the current instances. The new instances will have the latest set of security patches installed during setup.
+   - On Linux-based instances in Chef 11.10 or older stacks, run the Update Dependencies stack command, which installs the current set of security patches and other updates on the specified instances.
