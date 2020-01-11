@@ -11,6 +11,7 @@
   - Apply queue giúp hệ thống lose coupled/decoupled
   - Flow: add message to queue -> work instance hoặc lambda poll message từ queue và perform action    
   - Dead letter queue: xử lý những message mà fail to processing
+  - Message Group Identifier: chia thành nhiều group trong queue. Khi kết hợp với FIFO queue --> đảm bảo gửi message parallel, trong cùng 1 group thì sẽ theo order FIFO
   
 ## SNS:
   - Topic: 
