@@ -98,3 +98,7 @@
    - 24/7
    - Time-based: chỉ định time
    - Load-based: respond to load characteristics (%CPU,..)
+ - After you attach a load balancer to a layer, AWS OpsWorks Stacks does the following:
+   - Deregisters any currently registered instances.
+   - Automatically registers the layer's instances when they come online and deregisters instances when they go offline, including load-based and time-based instances.
+   - Automatically starts routing requests to registered instances in their Availability Zones.
