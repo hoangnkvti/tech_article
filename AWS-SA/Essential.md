@@ -96,7 +96,7 @@
 
 ## Site-to-side VPN
   - VPN: connect đến internet across public internet
-  - Customer Gateway: is the anchor on your side of that connection. It can be a physical or software appliance
+  - Customer Gateway: is the anchor on your side of that connection. It can be a physical or software appliance (IP: static, use BGP with dynamic routing)
   - Vitual private gateway: the anchor on the AWS side of the VPN connection. Đc AWS quản lý nên có sẵn tính HA
   - If your VPN device supports Border Gateway Protocol (BGP), specify dynamic routing when you configure your Site-to-Site VPN connection. If your device does not support BGP, specify static routing
   - Recommend: vpc có dùng BGP, vì sẽ support detection failover
@@ -114,7 +114,7 @@
   - Data k đc encrypted thông qua direct connect
   - Direct connect gateway: global resource, assocate với VPW ở nhiều region, reduce admin overhead
   - K có tính chất bắc cầu
-  - Link Aggregation Groups (LAG): order and manage multiple direct connect ports as a single larger connection instead of as separate discrete connections.
+  - Link Aggregation Groups (LAG): order and manage multiple direct connect ports as a single larger connection instead of as separate discrete connections. Max: 4, cùng bandwidth
   
 # Transit Gateway
   - Có thể làm trung gian, connect đến các VPC, support transitive routing
