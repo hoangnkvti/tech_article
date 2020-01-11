@@ -34,5 +34,5 @@
   
 ## Amazon Managed Blockchain
   - Is a fully managed service that makes it easy to create and manage scalable blockchain networks using the popular open source frameworks Hyperledger Fabric and Ethereum
-  -  Send invitation to add member (same of different aws account)
-  - 
+  - Send invitation to add member (same of different aws account)
+  - AWS Blockchain Templates provides a fast and easy way to create and deploy secure blockchain networks using popular open source frameworks. Use ECS ở EC2 run docker
