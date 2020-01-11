@@ -38,6 +38,9 @@
    - General Purpose: dòng T: burstable, tích credit khi CPU usage < baseline, dúng khi CPU usage > baseline
  - Instance store: non persistant -> use for cache, temporary storage, need high IOPS throughput
     -> not use: share storage, durability, elasticity
+ - Khi hibernate: 
+   - Suspend-to-disk: save content từ RAM vào root volume (EBS) --> khi start sẽ load lại data từ đó vào RAM
+   - You cannot enable hibernation on an existing instance (phải config từ lúc tạo instance)
  - EBS: Network storage product
    - EBS optimized: provide dedicated storage network -> improve speed, reduce contention with traditional data transfer
    - IOPS size: 256Kb chunk -> if operation is 256Kb -> count as 2 IOPS
