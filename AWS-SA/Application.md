@@ -8,6 +8,7 @@
     - Standard queue: Đảm bảo mỗi message delivery at least one nhưng k đảm bảo theo thứ tự
     - FIFO queue: Đảm bảo thứ tự message khi gửi, nhưng lose ability to scale infinitely
   - Visibility timeout: how long message is invisible after polled -> nếu sau thời gian này k có delete action thì sẽ pop back lại queue
+    - Có thể custom visibility timeout của message theo từng message (tagged, request header)
   - Apply queue giúp hệ thống lose coupled/decoupled
   - Flow: add message to queue -> work instance hoặc lambda poll message từ queue và perform action    
   - Dead letter queue: xử lý những message mà fail to processing
