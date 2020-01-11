@@ -36,3 +36,7 @@
   - Is a fully managed service that makes it easy to create and manage scalable blockchain networks using the popular open source frameworks Hyperledger Fabric and Ethereum
   - Send invitation to add member (same of different aws account)
   - AWS Blockchain Templates provides a fast and easy way to create and deploy secure blockchain networks using popular open source frameworks. Use ECS ở EC2 run docker
+
+## XRays:
+  - AWS X-Ray is a service that collects data about requests that your application serves, and provides tools you can use to view, filter, and gain insights into that data to identify issues and opportunities for optimization
+  - Dùng để trace inbound và output request (cài agent ở instance)
