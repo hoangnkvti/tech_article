@@ -18,6 +18,8 @@
  - Khi snapshot -> có cả thông tin transaction log -> có thể recovery Point in Time
  - ReadReplica: K thể write, tăng performance read, có thể setting ở region khác
  - Có thể change params config DB ở Parameter group
+ - Khác nhau giữa read-replica và multi-AZ: ![image](https://user-images.githubusercontent.com/40649408/72214525-39639880-3547-11ea-92c0-6a81a2ea1ef4.png)
+ 
  
 ## Aurora:
  - Full managed by aws -> performance up 5x for MySQL, 3x for PostgreSQL
