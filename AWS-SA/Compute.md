@@ -47,7 +47,7 @@
    - Snapshot: first data is backup data -> next snapshot only save changes
    - Type:
      - General purpose: Good IOPS (100-16000 IOPS/vol)
-     - Provisioned IOPS SSD: Need low latency, need higher IOPS throughput 
+     - Provisioned IOPS SSD: Need low latency, need higher IOPS throughput. Đảm bảo 3 IPOS/Gb, max 16k IOPS
      - HDD optimized: lower cost, for frequently access
      - Cold HDD: lowest cost, for inferquently access
    - Pattern:  ![image](https://user-images.githubusercontent.com/40649408/67630661-8338cd00-f8ce-11e9-932b-743fae562f1a.png)
