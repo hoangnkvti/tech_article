@@ -69,8 +69,9 @@
   - Với third-party thì k tự động renew, còn request bởi ACM thì sẽ auto renew
   - Có 2 cách validation: DNS và Email
   - Private key thì sẽ đc store ở KMS -> các integration service sẽ tương tác với KMS để lấy private key (k bh ở trạng thái plaintext) -> ACM k dùng được với service mà k integrate (ec2,..)
+  - Apply global: ELB: same site with different region -> request a new certificate for each region. Với cloudfront thì chỉ cần request ở us-east-1
  
- ##  AWS Directory Service
+ ## AWS Directory Service
    - Là 1 service group các product: Amazon Cloud Directory, Simple AD, Microsoft Active Directory, AD Connector và Cognito
    - 2 group: Amazon Cloud Directory + Cognito và còn lại
    - Simple AD: open source, is not a true MAD, but it is subset of MAD,
@@ -79,7 +80,7 @@
    - Simple AD, Microsoft Active Directory, AD Connector: HA, deploy ở nhiều AZ, có IP address (Giống rds). Có thể dùng để provide access to aws service, console.
   <img width="804" alt="Screen Shot 2019-10-20 at 1 35 08" src="https://user-images.githubusercontent.com/40649408/67148384-08721f80-f2da-11e9-88b3-61da9e6d4805.png">
 
-##  AWS WAF
+## AWS WAF
    - Control traffic reach to ELB, Cloudfront, API Gateway -> traffic is filtered by WAF before connect to these services
    - Unit of WAF: web ACL: Condition, rule contains conditions, web acl contains rules
    - Có 2 loại rule: regular rule, rate-based rule: base on frequency (VD: request 2000 lần trong 1 phút...)
@@ -87,7 +88,7 @@
    - Khi kết hợp với ASG thì nên dùng waf-sandwich model: request -> 1 elb -> waf để filter safe traffic -> elb thứ 2
 ![image](https://user-images.githubusercontent.com/40649408/71099304-6944a800-21f6-11ea-8a61-ee803752f5f4.png)
 
-##  AWS Shield
+## AWS Shield
   - Protect DDos, đứng trước WAF
   - Có 2 version: 
      - Standard: protect common DDos attack, always on
