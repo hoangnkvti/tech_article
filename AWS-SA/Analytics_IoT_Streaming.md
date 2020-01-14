@@ -33,7 +33,7 @@
  - Data records: Gồm sequence number, partition key và blob data.
  - Public zone -> khi kết nối ec2 cần vpc endpoint
  
- ## Kinesis Firehose:
+## Kinesis Firehose:
   - Delivery real time data (from Kinesis or other sources) to supported service
   - Có thể thực hiện transformation data theo 2 cách:
     - Lambda function:
