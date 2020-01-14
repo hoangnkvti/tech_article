@@ -37,6 +37,13 @@
   - Send invitation to add member (same of different aws account)
   - AWS Blockchain Templates provides a fast and easy way to create and deploy secure blockchain networks using popular open source frameworks. Use ECS ở EC2 run docker
 
+## Amazon Mechanical Turk:
+  - Crowdsourcing marketplace that makes it easier for individuals and businesses to outsource their processes and jobs to a distributed workforce who can perform these tasks virtually
+  - Là nơi outsource các yêu cầu --> send request lên Turk, sau đó có ng sẽ nhận làm request đó
+  
+## Amazon Appstream 2.0
+  - Fully managed application streaming service
+  - Một cách truyền phát các ứng dụng máy tính để bàn tới người dùng của bạn trong trình duyệt web. Ví dụ: sử dụng MS Word trong Google Chrome.
 ## XRays:
   - AWS X-Ray is a service that collects data about requests that your application serves, and provides tools you can use to view, filter, and gain insights into that data to identify issues and opportunities for optimization
   - Dùng để trace inbound và output request (cài agent ở instance)
