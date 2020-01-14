@@ -57,3 +57,5 @@
     - Inbound endpoint, Outbound endpoint: tạo elastic IP inside vpc -> có thể dùng nó để refer đến DNS, intergration thêm với rule
   - Routing policty: có nhiều loại policy: weight, latency, location,...
    - Có thể combine các routing types (traffic flow)
+   - Active-Active Failover: Khi muốn các resource đều available, khi unhealthy -> stop resource
+   - Active-Passive Failover: Khi muốn primary resource group of resource available, secondary: standby khi primary unhealthy -> chỉ response healthy resource, khi tất cả primary unhealth thì dùng secondary
