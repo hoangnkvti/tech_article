@@ -8,6 +8,7 @@
    - Owner trả phí lưu trữ, còn requester trả phí request data
    - Khi request, requester sẽ gửi thêm header `x-amz-request-payer` (những request không có header hoặc request khác sẽ đều bị tính cho owner)
    - Không support anynomous request, SOAP, BitTorrent
+   - Nếu dùng assumeRole rồi access -> account mà có role đó sẽ phải trả phí
  - Locking: có 2 loại:
    - Retention period: K cho update hoặc delete object trong 1 khoảng thời gian 
    - Legal hold: Giống Retention period nhưng k có thời gian expire
