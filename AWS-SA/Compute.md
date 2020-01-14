@@ -41,6 +41,9 @@
  - Khi hibernate: 
    - Suspend-to-disk: save content từ RAM vào root volume (EBS) --> khi start sẽ load lại data từ đó vào RAM
    - You cannot enable hibernation on an existing instance (phải config từ lúc tạo instance)
+ - Dedicated host: physical host is dedicated for you
+   - Host Affinity: Intansce level, Khi set là `Host`: dù có restart hay stop/start thì vẫn dùng same physical drive
+   - Auto-placement: Host level, Nếu để là enable thì sẽ launch ở specific host hoặc host khác có same configuration
  - EBS: Network storage product
    - EBS optimized: provide dedicated storage network -> improve speed, reduce contention with traditional data transfer
    - IOPS size: 256Kb chunk -> if operation is 256Kb -> count as 2 IOPS
