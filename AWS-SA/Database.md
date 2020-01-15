@@ -27,7 +27,7 @@
  - K dùng cơ chế Master-Slave, mà chỉ có Primary Instance và Replica
  - Nhiều read replicas dùng chung 1 read endpoint -> dùng 1 endpoint access
  - Best practice: multiple replicas với nhiều AZ, hoặc region khác
- - K defined upfront storage amount khi start
+ - K defined upfront storage amount khi start. Min: 10Gb, tự tăng lên nếu cần thiết, max là 64Tb.
  - Backtrack: Rollback DB về 1 trc thời điểm nào đó
  - Clone: lúc đầu refer đến original -> khi thay đổi source hoặc clone thì tạo ra version data mới (differential) (copy-on-write protocol) -> tốc độ clone nhanh hơn
  - Có thể multi-writer -> tăng performance và khả năng scale
