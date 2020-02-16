@@ -8,7 +8,7 @@
  - Có thể tạo custom metric bằng cách push log từ on-premise server, EC2 (install cloudwatch agent). Ngoài ra có thể tạo filter cho log
   - Cloudwatch log group có thể intergrate với Elasticsearch (searching data) hoặc lambda (processing real-time data)
  
- ## Cloudtrail:
+## Cloudtrail:
   - Log tất cả tương tác API với aws
   - Enable by default (90 days)
   - Có thể intergrate với nhiều service khác như S3, Cloudwatch log,... (tạo custom trail)
@@ -86,11 +86,13 @@
  - Deploy policy:
    - Immutable: tạo 1 env mới với new version -> swap URL sang
    - All at once: overwrite với new version
+   ![image](https://user-images.githubusercontent.com/40649408/74605832-ea44f080-510e-11ea-8c24-0a32e121f97f.png)
+
  - Có thể save lại config -> restore lại version config đó
  - Có thể custom config ở file .ebextensions trong source code
  - Có thể tạo được custom platform
  
- ## OpsWorks
+## OpsWorks
  - OpsWorks is a deployment and infrastructure management system based on Chef available in AWS
  - 1 Stack có 1 hoặc nhiều layer (gồm recipes, setting,...), mỗi layer có 1 hoặc nhiều instance
  - Auto healing: dettect the failure of instance -> re-provision this instance
