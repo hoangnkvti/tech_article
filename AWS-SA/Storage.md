@@ -71,4 +71,6 @@
      - Frequently access file thì sẽ đc cache locally
    - Store volume:
      - Dùng S3 để lưu snapshot
-     - Primary copy is local
+     - Primary is local
+   - In the cached mode, your primary data is written to S3, while retaining your frequently accessed data locally in a cache for low-latency access.
+   - In the stored mode, your primary data is stored locally and your entire dataset is available for low-latency access while asynchronously backed up to AWS.
